@@ -7,7 +7,9 @@ const Home = async () => {
         ${characters.results.map(character => `
             <article class="character">
                 <a href="#/${character.id}/" class="character-link">
-                    <img src="${character.image}" alt="${character.name}" class="character-img">
+                    <figure class="character-figure">
+                        <img src="${character.image}" alt="${character.name}" class="character-img">
+                    </figure>
                     <h2 class="character-name">${character.name}</h2>
                 </a>
             </article>

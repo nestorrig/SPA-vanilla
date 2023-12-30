@@ -1,7 +1,4 @@
 :root {
-  --primary-1:#FF9800;
-  --primary-2:#dc7c00;
-  --primary-3:#8f3d00;
   --accent-1:#646cff;
   --accent-2:#535bf2;
   --text-1:#FFFFFF;
@@ -37,7 +34,14 @@ body {
   width: 100%;
   min-height: 100vh;
 }
-
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
 .header {
   background-color: var(--bg-2);
   padding: 1.6rem;
@@ -54,6 +58,7 @@ body {
 }
 .header-title {
   font-size: 2em;
+  transition: all 0.3s ease;
 }
 .navbar {
   display: flex;
@@ -65,23 +70,73 @@ body {
   font-size: 1.6em;
   font-weight: 500;
   color: var(--text-2);
-  text-decoration: none;
+  transition: all 0.3s ease;
 }
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-main {
+.main {
   width: 100%;
+  margin: 0 auto;
+  padding: 0 1.6rem;
+}
+.content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 3.2rem 0;
 }
+.Characters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.4rem;
+}
+.character {
+  background-color: var(--bg-2);
+  padding: 1.6rem;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.character:hover {
+  background-color: var(--bg-3);
+  .character-figure {
+    background: var(--text-1);
+  }
+  .character-img {
+    transform: scale(0.8);
+    filter: grayscale(100%);
+  }
+  .character-name {
+    color: var(--text-2);
+  }
+}
+.character-figure {
+  margin: 0 auto;
+  padding: 2px;
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: var(--accent-1);
+  transition: background 0.3s ease;
+}
+.character-img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.character-name {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 1.6rem;
+  transition: all 0.3s ease;
+}
+
 
 
 @media screen and (min-width: 768px) {
